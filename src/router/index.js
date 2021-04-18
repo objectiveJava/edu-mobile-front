@@ -4,25 +4,36 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
 const routes = [
+  // 登录页
   {
     path: '/login',
     name: 'login',
     component: () => import(/* webpackChunkName: 'login' */'@/views/login/index')
   },
+  // 首页
   {
     path: '/',
     name: 'course',
     component: () => import(/* webpackChunkName: 'course' */'@/views/course/index')
   },
+  // 学习页
   {
     path: '/learn',
     name: 'learn',
     component: () => import(/* webpackChunkName: 'learn' */'@/views/learn/index')
   },
+  // 用户页
   {
     path: '/user',
     name: 'user',
     component: () => import(/* webpackChunkName: 'user' */'@/views/user/index')
+  },
+  // 课程详情页
+  {
+    path: '/course-info/:courseId/',
+    name: 'course-info',
+    component: () => import(/* webpackChunkName: 'course-info' */'@/views/course-info/index'),
+    props: true
   },
   {
     path: '*',
